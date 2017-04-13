@@ -1,0 +1,326 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<Export xmlns="http://www.nevigo.com/schemas/articydraft/2.4/XmlContentExport_FullProject.xsd" Version="2.4" CreatorTool="articy:draft" CreatorVersion="2.4.13" CreatedOn="2017-04-12T20:33:22Z">
+  <Settings>
+    <ExportMarkup>1</ExportMarkup>
+    <ExportQueries>1</ExportQueries>
+    <WriteNamespace>1</WriteNamespace>
+    <WriteAllVariables>0</WriteAllVariables>
+  </Settings>
+  <Content>
+    <Project Id="0x0100000000000001">
+      <DisplayName>SimpleProject</DisplayName>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037927937</Url>
+    </Project>
+    <ProjectSettings Id="0x03000000F917511B">
+      <FlowSettings>
+        <BuiltInScriptSupport>1</BuiltInScriptSupport>
+        <GridSize>25</GridSize>
+        <GridSizeEnforced>0</GridSizeEnforced>
+        <SpacingHorizontal>50</SpacingHorizontal>
+        <SpacingVertical>50</SpacingVertical>
+        <SpacingEnforced>0</SpacingEnforced>
+      </FlowSettings>
+      <JourneySettings>
+        <BackgroundImageMode>FromNode</BackgroundImageMode>
+        <BackgroundImagePositioningMode>Filling</BackgroundImagePositioningMode>
+        <BackgroundColorMode>Custom</BackgroundColorMode>
+        <BackgroundColor>#798F93</BackgroundColor>
+        <BackgroundColorGradientMode>On</BackgroundColorGradientMode>
+        <Duration>10</Duration>
+        <TransitionMode>Animated</TransitionMode>
+      </JourneySettings>
+      <LocationSettings>
+        <ShowDisplayNameForZone>1</ShowDisplayNameForZone>
+        <DropShadowForZone>1</DropShadowForZone>
+        <DisplayNameSizeForZone>11</DisplayNameSizeForZone>
+        <DisplayNameColorForZone>#FFFFFF</DisplayNameColorForZone>
+        <ShowDisplayNameForPath>1</ShowDisplayNameForPath>
+        <DropShadowForPath>1</DropShadowForPath>
+        <DisplayNameSizeForPath>11</DisplayNameSizeForPath>
+        <DisplayNameColorForPath>#FFFFFF</DisplayNameColorForPath>
+        <ShowDisplayNameForImage>0</ShowDisplayNameForImage>
+        <DropShadowForImage>1</DropShadowForImage>
+        <DisplayNameSizeForImage>11</DisplayNameSizeForImage>
+        <DisplayNameColorForImage>#FFFFFF</DisplayNameColorForImage>
+        <ShowDisplayNameForSpot>1</ShowDisplayNameForSpot>
+        <DropShadowForSpot>1</DropShadowForSpot>
+        <DisplayNameColorForSpot>#FFFFFF</DisplayNameColorForSpot>
+        <SpotStyleKind>Flag</SpotStyleKind>
+        <SpotStyleSize>Large</SpotStyleSize>
+        <ShowDisplayNameForLink>1</ShowDisplayNameForLink>
+        <DropShadowForLink>1</DropShadowForLink>
+        <DisplayNameColorForLink>#FFFFFF</DisplayNameColorForLink>
+        <LinkStyleKind>PreviewImage</LinkStyleKind>
+        <LinkStyleSize>Large</LinkStyleSize>
+        <DropShadowForText>1</DropShadowForText>
+      </LocationSettings>
+      <ExternalApplications/>
+    </ProjectSettings>
+    <Assets Id="0x030000004C3DAF54">
+      <DisplayName>Asset</DisplayName>
+      <Color>#C8E2E7</Color>
+    </Assets>
+    <AssetsUserFolder Id="0x01000000000000FE">
+      <DisplayName Count="1">
+        <LocalizedString Lang="">Obrazy</LocalizedString>
+      </DisplayName>
+      <Color>#C8E2E7</Color>
+      <TechnicalName>Ufo_FCEBA0FB</TechnicalName>
+      <ExternalId/>
+      <ShortId>0xFCEBA0FB</ShortId>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928190</Url>
+    </AssetsUserFolder>
+    <AssetsUserFolder Id="0x0100000000000100">
+      <DisplayName Count="1">
+        <LocalizedString Lang="">Filmy</LocalizedString>
+      </DisplayName>
+      <Color>#C8E2E7</Color>
+      <TechnicalName>Ufo_B0A01CC9</TechnicalName>
+      <ExternalId/>
+      <ShortId>0xB0A01CC9</ShortId>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928192</Url>
+    </AssetsUserFolder>
+    <AssetsUserFolder Id="0x0100000000000102">
+      <DisplayName Count="1">
+        <LocalizedString Lang="">Dźwięk</LocalizedString>
+      </DisplayName>
+      <Color>#C8E2E7</Color>
+      <TechnicalName>Ufo_DB5D3537</TechnicalName>
+      <ExternalId/>
+      <ShortId>0xDB5D3537</ShortId>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928194</Url>
+    </AssetsUserFolder>
+    <AssetsUserFolder Id="0x0100000000000104">
+      <DisplayName Count="1">
+        <LocalizedString Lang="">Dokumenty</LocalizedString>
+      </DisplayName>
+      <Color>#C8E2E7</Color>
+      <TechnicalName>Ufo_F2676326</TechnicalName>
+      <ExternalId/>
+      <ShortId>0xF2676326</ShortId>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928196</Url>
+    </AssetsUserFolder>
+    <AssetsUserFolder Id="0x0100000000000106">
+      <DisplayName Count="1">
+        <LocalizedString Lang="">Różne</LocalizedString>
+      </DisplayName>
+      <Color>#C8E2E7</Color>
+      <TechnicalName>Ufo_9BC02E0C</TechnicalName>
+      <ExternalId/>
+      <ShortId>0x9BC02E0C</ShortId>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928198</Url>
+    </AssetsUserFolder>
+    <Documents Id="0x03000000103AA2F0">
+      <DisplayName>Dokumenty</DisplayName>
+      <Color>#C8E2E7</Color>
+    </Documents>
+    <Entities Id="0x03000000AC61A2B3">
+      <DisplayName>Podmioty</DisplayName>
+      <Color>#C8E2E7</Color>
+    </Entities>
+    <Features Id="0x03000000D2404DC0">
+      <DisplayName>Właściwości</DisplayName>
+      <Color>#C8E2E7</Color>
+    </Features>
+    <Flow Id="0x0300000043CE43F7">
+      <DisplayName>Flow</DisplayName>
+      <Color>#C8E2E7</Color>
+    </Flow>
+    <GlobalVariables Id="0x030000002B4F4C54">
+      <DisplayName>Zmienne globalne</DisplayName>
+      <Color>#C8E2E7</Color>
+    </GlobalVariables>
+    <Journeys Id="0x03000000236F7272">
+      <DisplayName>Tury</DisplayName>
+      <Color>#C8E2E7</Color>
+    </Journeys>
+    <Locations Id="0x030000003140D3AC">
+      <DisplayName>Lokacje</DisplayName>
+      <Color>#C8E2E7</Color>
+    </Locations>
+    <ObjectCustomization Id="0x0300000029CF057C">
+      <DisplayName>Desing szablonu</DisplayName>
+      <Color>#C8E2E7</Color>
+    </ObjectCustomization>
+    <ObjectTemplates Id="0x030000009AF68DCD">
+      <DisplayName>Szablony</DisplayName>
+      <Color>#C8E2E7</Color>
+    </ObjectTemplates>
+    <PropertyTemplates Id="0x030000002C0951AE">
+      <DisplayName>Definicje właśności</DisplayName>
+      <Color>#C8E2E7</Color>
+    </PropertyTemplates>
+    <TypedObjectTemplates Id="0x0300000078B45A71">
+      <DisplayName>Podmioty</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedObjectTemplates>
+    <TypedObjectTemplates Id="0x030000006D1BC275">
+      <DisplayName>Fragmenty flowu</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedObjectTemplates>
+    <TypedObjectTemplates Id="0x03000000030B5ACF">
+      <DisplayName>Fragmenty dialogów</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedObjectTemplates>
+    <TypedObjectTemplates Id="0x030000008DD5C0F2">
+      <DisplayName>Dialogi</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedObjectTemplates>
+    <TypedObjectTemplates Id="0x0300000092CF598E">
+      <DisplayName>Lokacje</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedObjectTemplates>
+    <TypedObjectTemplates Id="0x0300000030635118">
+      <DisplayName>Assety</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedObjectTemplates>
+    <TypedObjectTemplates Id="0x03000000A715C057">
+      <DisplayName>Obszary</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedObjectTemplates>
+    <TypedObjectTemplates Id="0x030000005314E813">
+      <DisplayName>Ścieżki</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedObjectTemplates>
+    <TypedObjectTemplates Id="0x030000004264B29C">
+      <DisplayName>Miejsca</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedObjectTemplates>
+    <TypedObjectTemplates Id="0x03000000FB371D5C">
+      <DisplayName>Linki</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedObjectTemplates>
+    <TypedObjectTemplates Id="0x0300000013DF3A1A">
+      <DisplayName>Ośrodki</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedObjectTemplates>
+    <TypedObjectTemplates Id="0x03000000ADA9FA17">
+      <DisplayName>Skoki</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedObjectTemplates>
+    <TypedObjectTemplates Id="0x03000000ECC00F83">
+      <DisplayName>Documenty</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedObjectTemplates>
+    <TypedObjectTemplates Id="0x03000000F514339C">
+      <DisplayName>Teksty</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedObjectTemplates>
+    <TypedObjectTemplates Id="0x0300000096812FC1">
+      <DisplayName>Teksty (w lokacjach)</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedObjectTemplates>
+    <TypedObjectTemplates Id="0x03000000CC5A07F0">
+      <DisplayName>Obrazy (w lokacjach)</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedObjectTemplates>
+    <TypedObjectTemplates Id="0x03000000DCC67F9D">
+      <DisplayName>Warunki</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedObjectTemplates>
+    <TypedObjectTemplates Id="0x03000000BA022E2F">
+      <DisplayName>Instrukcje</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedObjectTemplates>
+    <TypedPropertyTemplates Id="0x030000006E2C178B">
+      <DisplayName>Numery</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedPropertyTemplates>
+    <TypedPropertyTemplates Id="0x03000000BB12F1B8">
+      <DisplayName>Boolean</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedPropertyTemplates>
+    <TypedPropertyTemplates Id="0x030000006F82D78E">
+      <DisplayName>Teksty</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedPropertyTemplates>
+    <TypedPropertyTemplates Id="0x0300000037DCE3F0">
+      <DisplayName>Rozwijana lista</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedPropertyTemplates>
+    <TypedPropertyTemplates Id="0x030000003630A240">
+      <DisplayName>Gniazda i Listwy</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedPropertyTemplates>
+    <TypedPropertyTemplates Id="0x03000000D745C449">
+      <DisplayName>Skrypty</DisplayName>
+      <Color>#C8E2E7</Color>
+    </TypedPropertyTemplates>
+    <Entity Id="0x0100000000000108">
+      <DisplayName Count="1">
+        <LocalizedString Lang="">Gracz</LocalizedString>
+      </DisplayName>
+      <Color>#C8E2E7</Color>
+      <TechnicalName>Ntt_BD1B5D81</TechnicalName>
+      <ExternalId/>
+      <ShortId>0xBD1B5D81</ShortId>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928200</Url>
+      <Features Count="0"/>
+      <References Count="0"/>
+    </Entity>
+    <Entity Id="0x010000000000010C">
+      <DisplayName Count="1">
+        <LocalizedString Lang="">Narrator</LocalizedString>
+      </DisplayName>
+      <Color>#C8E2E7</Color>
+      <TechnicalName>Ntt_24CDCAC6</TechnicalName>
+      <ExternalId/>
+      <ShortId>0x24CDCAC6</ShortId>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928204</Url>
+      <Features Count="0"/>
+      <References Count="0"/>
+    </Entity>
+  </Content>
+  <Hierarchy>
+    <Node IdRef="0x0100000000000001" Type="Project">
+      <Node IdRef="0x0300000043CE43F7" Type="Flow"/>
+      <Node IdRef="0x030000003140D3AC" Type="Locations"/>
+      <Node IdRef="0x03000000AC61A2B3" Type="Entities">
+        <Node IdRef="0x0100000000000108" Type="Entity"/>
+        <Node IdRef="0x010000000000010C" Type="Entity"/>
+      </Node>
+      <Node IdRef="0x030000004C3DAF54" Type="Assets">
+        <Node IdRef="0x01000000000000FE" Type="AssetsUserFolder"/>
+        <Node IdRef="0x0100000000000100" Type="AssetsUserFolder"/>
+        <Node IdRef="0x0100000000000102" Type="AssetsUserFolder"/>
+        <Node IdRef="0x0100000000000104" Type="AssetsUserFolder"/>
+        <Node IdRef="0x0100000000000106" Type="AssetsUserFolder"/>
+      </Node>
+      <Node IdRef="0x0300000029CF057C" Type="ObjectCustomization">
+        <Node IdRef="0x03000000D2404DC0" Type="Features"/>
+        <Node IdRef="0x030000009AF68DCD" Type="ObjectTemplates">
+          <Node IdRef="0x0300000078B45A71" Type="TypedObjectTemplates"/>
+          <Node IdRef="0x030000006D1BC275" Type="TypedObjectTemplates"/>
+          <Node IdRef="0x03000000030B5ACF" Type="TypedObjectTemplates"/>
+          <Node IdRef="0x030000008DD5C0F2" Type="TypedObjectTemplates"/>
+          <Node IdRef="0x0300000092CF598E" Type="TypedObjectTemplates"/>
+          <Node IdRef="0x0300000030635118" Type="TypedObjectTemplates"/>
+          <Node IdRef="0x03000000A715C057" Type="TypedObjectTemplates"/>
+          <Node IdRef="0x030000005314E813" Type="TypedObjectTemplates"/>
+          <Node IdRef="0x030000004264B29C" Type="TypedObjectTemplates"/>
+          <Node IdRef="0x03000000FB371D5C" Type="TypedObjectTemplates"/>
+          <Node IdRef="0x0300000013DF3A1A" Type="TypedObjectTemplates"/>
+          <Node IdRef="0x03000000ADA9FA17" Type="TypedObjectTemplates"/>
+          <Node IdRef="0x03000000ECC00F83" Type="TypedObjectTemplates"/>
+          <Node IdRef="0x03000000F514339C" Type="TypedObjectTemplates"/>
+          <Node IdRef="0x0300000096812FC1" Type="TypedObjectTemplates"/>
+          <Node IdRef="0x03000000CC5A07F0" Type="TypedObjectTemplates"/>
+          <Node IdRef="0x03000000DCC67F9D" Type="TypedObjectTemplates"/>
+          <Node IdRef="0x03000000BA022E2F" Type="TypedObjectTemplates"/>
+        </Node>
+        <Node IdRef="0x030000002C0951AE" Type="PropertyTemplates">
+          <Node IdRef="0x030000006E2C178B" Type="TypedPropertyTemplates"/>
+          <Node IdRef="0x03000000BB12F1B8" Type="TypedPropertyTemplates"/>
+          <Node IdRef="0x030000006F82D78E" Type="TypedPropertyTemplates"/>
+          <Node IdRef="0x0300000037DCE3F0" Type="TypedPropertyTemplates"/>
+          <Node IdRef="0x030000003630A240" Type="TypedPropertyTemplates"/>
+          <Node IdRef="0x03000000D745C449" Type="TypedPropertyTemplates"/>
+        </Node>
+      </Node>
+      <Node IdRef="0x030000002B4F4C54" Type="GlobalVariables"/>
+      <Node IdRef="0x03000000103AA2F0" Type="Documents"/>
+      <Node IdRef="0x03000000236F7272" Type="Journeys"/>
+      <Node IdRef="0x03000000F917511B" Type="ProjectSettings"/>
+    </Node>
+  </Hierarchy>
+</Export>
