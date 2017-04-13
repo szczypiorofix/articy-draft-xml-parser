@@ -55,29 +55,38 @@ public class XMLParser {
 	        				A_Entity entity = new A_Entity();
 	        				NodeList entityChildNodes = cNode.getChildNodes();
 	        				
-	        				for (int a = 0; a < cNode.getChildNodes().getLength(); a++) {
-	        					Node eNode = cNode.getChildNodes().item(a);
+	        				for (int a = 0; a < entityChildNodes.getLength(); a++) {
+	        					Node eNode = entityChildNodes.item(a);
 	        					if (eNode instanceof Element) {
-	        						//System.out.println(entityChildNodes.item(a).getNodeName());	
-	        						if (eNode.getNodeName().equals("ShortId")) {
-	        							
-	        							
-	        							NodeList shortIdList = eNode.getChildNodes();
-	        							for (int b = 0; b < eNode.getChildNodes().getLength(); b++) {
-	        								Node siNode = eNode.getChildNodes().item(b);
-	        								if (siNode instanceof Element) {
-	        									System.out.println(shortIdList.item(b).getNodeName());
-	        								}
-	        							}
-	        							
+	        						System.out.println(eNode.getNodeName() +" : " +eNode.getTextContent().trim());
+	        						
+	        						switch (eNode.getNodeName()) {
+	        						case "DisplayName":
+	        											entity.displayName = eNode.getTextContent().trim();
+	        											break;
+	        						case "ShortId":
+										entity.shortId = eNode.getTextContent().trim();
+										break;
+	        						case "Color":
+										entity.color = eNode.getTextContent().trim();
+										break;
+	        						case "TechnicalName":
+	        							entity.technicalName = eNode.getTextContent().trim();
+	        							break;
 	        						}
-	        							
+	        						
+	        						if (eNode.getNodeName().equals("Features")) {
+	        							System.out.println(eNode.getAttributes().getNamedItem("Count"));
+	        						}
+	        						
 	        					}
+	        					
 	        					
 	        				}
 	        				entity.id = cNode.getAttributes().getNamedItem("Id").toString();
 	        				
 	        				entityList.add(entity);
+	        				System.out.println();
 	        			}
 	        		}
 	        	}
@@ -87,9 +96,9 @@ public class XMLParser {
 	    }
 	    
 	    
-	    System.out.println("SPIS OBIEKTÓW ENTTY: ");
+	    System.out.println("SPIS OBIEKTÓW ENTITY: ");
 	    for (int i = 0; i < entityList.size(); i++) {
-	    	System.out.println(entityList.get(i).id + " ShortId: " +entityList.get(i).shortId);
+	    	System.out.println(entityList.get(i).displayName +", " +entityList.get(i).id +", " +entityList.get(i).shortId+", " +entityList.get(i).color +", " +entityList.get(i).technicalName);
 	    }
     }
 	
