@@ -10,7 +10,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.w3c.dom.Text;
 
 import articy.content.A_Dialogue;
 import articy.content.A_DialogueFragment;
@@ -195,13 +194,12 @@ public class XMLParser {
 	    }
 	    
 	    
-	    //System.out.println("SPIS OBIEKTÓW ENTITY: ");
-	    //for (int i = 0; i < entityList.size(); i++) {
-	    //	System.out.println(entityList.get(i).displayName +", " +entityList.get(i).id +", " +entityList.get(i).shortId+", " +entityList.get(i).color +", " +entityList.get(i).technicalName);
-	    //}
+	    System.out.println("SPIS OBIEKTÓW ENTITY: ");
+	    for (int i = 0; i < entityList.size(); i++) {
+	    	System.out.println(entityList.get(i).displayName +", " +entityList.get(i).id);
+	    }
 	    
-	    
-	    
+	    System.out.println();
 	    System.out.println("SPIS OBIEKTÓW DIALOGUE: ");
 	    for (int i = 0; i < dialogueList.size(); i++) {
 	    	System.out.println(dialogueList.get(i).displayName +", " +dialogueList.get(i).id);
