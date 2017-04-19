@@ -11,6 +11,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import articy.content.A_Connection;
 import articy.content.A_Dialogue;
 import articy.content.A_DialogueFragment;
 import articy.content.A_Entity;
@@ -28,6 +29,7 @@ public class XMLParser {
 		List<A_Dialogue> dialogueList = new ArrayList<A_Dialogue>();
 		List<A_DialogueFragment> dialogueFragmentList = new ArrayList<A_DialogueFragment>();
 		List<A_FlowFragment> flowFragmentList = new ArrayList<A_FlowFragment>();
+		List<A_Connection> connectionList = new ArrayList<A_Connection>();
 		
 		
 	    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -41,24 +43,16 @@ public class XMLParser {
 
 	        Node node = nodeList.item(i);
 	        if (node instanceof Element) {
-	          //Employee emp = new Employee();
-	          //emp.id = node.getAttributes().getNamedItem("id").getNodeValue();
-	          //System.out.print("NODE: " +node.getNodeName() +" : ");
 	        	
 	        	NodeList childNodes = node.getChildNodes();
-	          
 	        	
 	        	for (int j = 0; j < childNodes.getLength(); j++) {
 	        		Node cNode = childNodes.item(j);
 
-	        		//Identifying the child tag of employee encountered. 
-	        		if (cNode instanceof Element) {
-	        			//System.out.print(cNode.getNodeName() +", ");
-	        			
+	        		if (cNode instanceof Element) {	        			
 	        			
 	        			///// ##### ENTITY
 	        			if (cNode.getNodeName().equals("Entity")) {
-	        				//System.out.println(cNode.getNodeName() +" id: "+cNode.getAttributes().getNamedItem("Id").getNodeValue());
 	        				
 	        				A_Entity entity = new A_Entity();
 	        				NodeList entityChildNodes = cNode.getChildNodes();
@@ -66,7 +60,6 @@ public class XMLParser {
 	        				for (int a = 0; a < entityChildNodes.getLength(); a++) {
 	        					Node eNode = entityChildNodes.item(a);
 	        					if (eNode instanceof Element) {
-	        						//System.out.println(eNode.getNodeName() +" : " +eNode.getTextContent().trim());
 	        						
 	        						switch (eNode.getNodeName()) {
 	        						case "DisplayName":
@@ -75,11 +68,10 @@ public class XMLParser {
 	        						}
 	        						
 	        						if (eNode.getNodeName().equals("Features")) {
-	        							//System.out.println(eNode.getAttributes().getNamedItem("Count"));
 	        						}
 	        					}	        					
 	        				}
-	        				entity.id = cNode.getAttributes().getNamedItem("Id").toString();
+	        				entity.id = cNode.getAttributes().getNamedItem("Id").getNodeValue();
 	        				entityList.add(entity);
 	        			}
 	        			
@@ -128,7 +120,7 @@ public class XMLParser {
 	        						}
 	        					}	        					
 	        				}
-	        				dialog.id = cNode.getAttributes().getNamedItem("Id").toString();
+	        				dialog.id = cNode.getAttributes().getNamedItem("Id").getNodeValue();
 	        				dialogueList.add(dialog);
 	        			}
 	        			
@@ -184,9 +176,38 @@ public class XMLParser {
 	        						
 	        					}	        					
 	        				}
-	        				flowFragment.id = cNode.getAttributes().getNamedItem("Id").toString();
+	        				
+	        				flowFragment.id = cNode.getAttributes().getNamedItem("Id").getNodeValue();
 	        				flowFragmentList.add(flowFragment);
 	        			}
+	        			
+	        			
+	        			
+	        			///// ##### CONNECTION
+	        			if (cNode.getNodeName().equals("Connection")) {	        				
+	        				A_Connection connection = new A_Connection();
+	        				NodeList entityChildNodes = cNode.getChildNodes();
+	        				
+	        				for (int a = 0; a < entityChildNodes.getLength(); a++) {
+	        					Node eNode = entityChildNodes.item(a);
+	        					if (eNode instanceof Element) {	        						
+	        						switch (eNode.getNodeName()) {
+	        						case "Source":
+	        							connection.sourceIdRef = eNode.getAttributes().getNamedItem("IdRef").getNodeValue();
+	        							connection.sourcePinRef = eNode.getAttributes().getNamedItem("PinRef").getNodeValue();
+										break;
+	        						case "Target":
+	        							connection.targetIdRef = eNode.getAttributes().getNamedItem("IdRef").getNodeValue();
+	        							connection.targetPinRef = eNode.getAttributes().getNamedItem("PinRef").getNodeValue();
+										break;
+	        						}
+	        						
+	        					}	        					
+	        				}
+	        				connection.id = cNode.getAttributes().getNamedItem("Id").getNodeValue();
+	        				connectionList.add(connection);
+	        			}	        			
+	        			
 	        			
 	        		}
 	        	}
@@ -213,6 +234,7 @@ public class XMLParser {
 	    		System.out.println("Pin: " +dialogueList.get(i).pins.get(j));
 	    	}
 	    }
+	    
 	    System.out.println();
 	    System.out.println("SPIS OBIEKTÓW DIALOGUE FRAGMENT: ");
 	    for (int i = 0; i < dialogueFragmentList.size(); i++) {
@@ -222,6 +244,36 @@ public class XMLParser {
 	    	System.out.println("Speaker ID: " +dialogueFragmentList.get(i).speakerId);
 	    }
 	    
+	    System.out.println();
+	    System.out.println("SPIS OBIEKTÓW FLOW FRAGMENT: ");
+	    for (int i = 0; i < flowFragmentList.size(); i++) {
+	    	System.out.println(flowFragmentList.get(i).displayName +", " +flowFragmentList.get(i).id);
+	    	System.out.println("Text: " +flowFragmentList.get(i).text);
+	    }
+	    
+	    System.out.println();
+	    System.out.println("SPIS OBIEKTÓW CONNECTION: ");
+	    for (int i = 0; i < connectionList.size(); i++) {
+	    	System.out.println("ID: "+connectionList.get(i).id);
+	    	System.out.println("Source: " +connectionList.get(i).sourceIdRef +" -> " +connectionList.get(i).sourcePinRef);
+	    	System.out.println("Target: " +connectionList.get(i).targetIdRef +" -> " +connectionList.get(i).targetPinRef);
+	    }
+	    
+	    System.out.println();
+	    System.out.println();
+	    System.out.println("Łączenie: ");
+	    
+	    for (int i = 0; i < connectionList.size(); i++) {
+	    	
+	    	if (connectionList.get(i).sourceIdRef.equals("0x0100000000000117")) {
+	    		for (int x = 0; x < flowFragmentList.size(); x++) {
+	    			if (flowFragmentList.get(x).id.equals(connectionList.get(i).sourceIdRef)) {
+	    				System.out.println("POCZĄTEK!: " +flowFragmentList.get(x).displayName);
+	    			}
+	    		}
+	    	}
+	    	
+	    }
     }
 	
 	public static void main(String[] args) throws Exception {
