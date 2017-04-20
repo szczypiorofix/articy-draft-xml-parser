@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
-<Export xmlns="http://www.nevigo.com/schemas/articydraft/2.4/XmlContentExport_FullProject.xsd" Version="2.4" CreatorTool="articy:draft" CreatorVersion="2.4.13" CreatedOn="2017-04-19T20:45:54Z">
+<Export xmlns="http://www.nevigo.com/schemas/articydraft/2.4/XmlContentExport_FullProject.xsd" Version="2.4" CreatorTool="articy:draft" CreatorVersion="2.4.13" CreatedOn="2017-04-20T14:15:27Z">
   <Settings>
     <ExportMarkup>1</ExportMarkup>
     <ExportQueries>1</ExportQueries>
@@ -297,22 +297,40 @@
       <AssetPath>Assets\Partition(78b78c0e-fc8e-4307-91ea-7d22b14ae3ea)\</AssetPath>
       <OriginalSource>file:///C:/Users/Semiko/Dropbox/Articy Draft/Assets/Asylum.jpg</OriginalSource>
     </Asset>
-    <Connection Id="0x010000000000017F">
+    <Connection Id="0x010000000000018D">
       <Color>#C8E2E7</Color>
-      <TechnicalName>Con_F4EA3F78</TechnicalName>
-      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928319</Url>
+      <TechnicalName>Con_D5B8EE31</TechnicalName>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928333</Url>
       <Label Count="0"/>
       <Source IdRef="0x0100000000000117" PinRef="0x010000000000011B"/>
+      <Target IdRef="0x0100000000000182" PinRef="0x0100000000000185"/>
+      <ShowLabel>0</ShowLabel>
+    </Connection>
+    <Connection Id="0x010000000000018E">
+      <Color>#C8E2E7</Color>
+      <TechnicalName>Con_281D7C7E</TechnicalName>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928334</Url>
+      <Label Count="0"/>
+      <Source IdRef="0x0100000000000182" PinRef="0x0100000000000186"/>
       <Target IdRef="0x0100000000000179" PinRef="0x010000000000017C"/>
       <ShowLabel>0</ShowLabel>
     </Connection>
-    <Connection Id="0x0100000000000188">
+    <Connection Id="0x0100000000000195">
       <Color>#C8E2E7</Color>
-      <TechnicalName>Con_EC631EB7</TechnicalName>
-      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928328</Url>
+      <TechnicalName>Con_AD0CE185</TechnicalName>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928341</Url>
       <Label Count="0"/>
       <Source IdRef="0x0100000000000179" PinRef="0x010000000000017D"/>
-      <Target IdRef="0x0100000000000182" PinRef="0x0100000000000185"/>
+      <Target IdRef="0x010000000000018F" PinRef="0x0100000000000192"/>
+      <ShowLabel>0</ShowLabel>
+    </Connection>
+    <Connection Id="0x010000000000019C">
+      <Color>#C8E2E7</Color>
+      <TechnicalName>Con_97F3EA4F</TechnicalName>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928348</Url>
+      <Label Count="0"/>
+      <Source IdRef="0x0100000000000196" PinRef="0x010000000000019A"/>
+      <Target IdRef="0x0100000000000117" PinRef="0x010000000000011A"/>
       <ShowLabel>0</ShowLabel>
     </Connection>
     <Entity Id="0x0100000000000108">
@@ -408,7 +426,7 @@
           <Expression/>
         </Pin>
       </Pins>
-      <Position X="450" Y="275"/>
+      <Position X="750" Y="275"/>
       <Size Width="275" Height="200"/>
       <ZIndex>1</ZIndex>
     </FlowFragment>
@@ -437,9 +455,61 @@
           <Expression/>
         </Pin>
       </Pins>
-      <Position X="850" Y="275"/>
+      <Position X="400" Y="275"/>
       <Size Width="275" Height="200"/>
       <ZIndex>3</ZIndex>
+    </FlowFragment>
+    <FlowFragment Id="0x010000000000018F">
+      <DisplayName Count="1">
+        <LocalizedString Lang="">KONIEC</LocalizedString>
+      </DisplayName>
+      <Text Count="1" HasMarkup="1">
+        <LocalizedString Lang=""><![CDATA[<html><head><style>#s0 {text-align:left;} #s1 {font-size:11pt;} </style></head><body><p id="s0"><span id="s1">Koniec</span></p></body></html>]]></LocalizedString>
+      </Text>
+      <Color>#C8E2E7</Color>
+      <TechnicalName>FFr_118B778B</TechnicalName>
+      <ExternalId/>
+      <ShortId>0x118B778B</ShortId>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928335</Url>
+      <Features Count="0"/>
+      <References Count="0"/>
+      <Pins Count="2">
+        <Pin Id="0x0100000000000192" Index="0" Semantic="Input">
+          <Expression/>
+        </Pin>
+        <Pin Id="0x0100000000000193" Index="0" Semantic="Output">
+          <Expression/>
+        </Pin>
+      </Pins>
+      <Position X="1200" Y="275"/>
+      <Size Width="275" Height="200"/>
+      <ZIndex>5</ZIndex>
+    </FlowFragment>
+    <FlowFragment Id="0x0100000000000196">
+      <DisplayName Count="1">
+        <LocalizedString Lang="">START</LocalizedString>
+      </DisplayName>
+      <Text Count="1" HasMarkup="1">
+        <LocalizedString Lang=""><![CDATA[<html><head><style>#s0 {text-align:left;} #s1 {font-size:11pt;} </style></head><body><p id="s0"><span id="s1">START</span></p></body></html>]]></LocalizedString>
+      </Text>
+      <Color>#C8E2E7</Color>
+      <TechnicalName>FFr_B8625CAD</TechnicalName>
+      <ExternalId/>
+      <ShortId>0xB8625CAD</ShortId>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928342</Url>
+      <Features Count="0"/>
+      <References Count="0"/>
+      <Pins Count="2">
+        <Pin Id="0x0100000000000199" Index="0" Semantic="Input">
+          <Expression/>
+        </Pin>
+        <Pin Id="0x010000000000019A" Index="0" Semantic="Output">
+          <Expression/>
+        </Pin>
+      </Pins>
+      <Position X="-325" Y="275"/>
+      <Size Width="275" Height="200"/>
+      <ZIndex>7</ZIndex>
     </FlowFragment>
   </Content>
   <Hierarchy>
@@ -447,9 +517,13 @@
       <Node IdRef="0x0300000043CE43F7" Type="Flow">
         <Node IdRef="0x0100000000000117" Type="FlowFragment"/>
         <Node IdRef="0x0100000000000179" Type="FlowFragment"/>
-        <Node IdRef="0x010000000000017F" Type="Connection"/>
         <Node IdRef="0x0100000000000182" Type="FlowFragment"/>
-        <Node IdRef="0x0100000000000188" Type="Connection"/>
+        <Node IdRef="0x010000000000018D" Type="Connection"/>
+        <Node IdRef="0x010000000000018E" Type="Connection"/>
+        <Node IdRef="0x010000000000018F" Type="FlowFragment"/>
+        <Node IdRef="0x0100000000000195" Type="Connection"/>
+        <Node IdRef="0x0100000000000196" Type="FlowFragment"/>
+        <Node IdRef="0x010000000000019C" Type="Connection"/>
       </Node>
       <Node IdRef="0x030000003140D3AC" Type="Locations"/>
       <Node IdRef="0x03000000AC61A2B3" Type="Entities">

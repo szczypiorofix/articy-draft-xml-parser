@@ -22,19 +22,25 @@ import articy.content.A_FlowFragment;
 
 public class XMLParser {
 
+	private boolean theEnd = false;
+	private String output;
+	private String lastNode;
+	private String startNode, endNode;
+	
+	private List<A_Entity> entityList = new ArrayList<A_Entity>();
+	
+	private List<A_Dialogue> dialogueList = new ArrayList<A_Dialogue>();
+	private List<A_DialogueFragment> dialogueFragmentList = new ArrayList<A_DialogueFragment>();
+	private List<A_FlowFragment> flowFragmentList = new ArrayList<A_FlowFragment>();
+	private List<A_Connection> connectionList = new ArrayList<A_Connection>();
+	
+	
+    private DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+    private DocumentBuilder builder = factory.newDocumentBuilder();
+    
+	
 	public XMLParser() throws Exception {
 		
-		
-		List<A_Entity> entityList = new ArrayList<A_Entity>();
-		List<A_Dialogue> dialogueList = new ArrayList<A_Dialogue>();
-		List<A_DialogueFragment> dialogueFragmentList = new ArrayList<A_DialogueFragment>();
-		List<A_FlowFragment> flowFragmentList = new ArrayList<A_FlowFragment>();
-		List<A_Connection> connectionList = new ArrayList<A_Connection>();
-		
-		
-	    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-	    DocumentBuilder builder = factory.newDocumentBuilder();
-
 	    Document document = builder.parse(ClassLoader.getSystemResourceAsStream("SimpleProject.xml"));
 
 	    NodeList nodeList = document.getDocumentElement().getChildNodes();
@@ -261,19 +267,42 @@ public class XMLParser {
 	    
 	    System.out.println();
 	    System.out.println();
-	    System.out.println("Łączenie: ");
+	    System.out.println("Łączenie przygody 'do kupy': ");
 	    
-	    for (int i = 0; i < connectionList.size(); i++) {
-	    	
-	    	if (connectionList.get(i).sourceIdRef.equals("0x0100000000000117")) {
-	    		for (int x = 0; x < flowFragmentList.size(); x++) {
-	    			if (flowFragmentList.get(x).id.equals(connectionList.get(i).sourceIdRef)) {
-	    				System.out.println("POCZĄTEK!: " +flowFragmentList.get(x).displayName);
-	    			}
-	    		}
+	    startNode = "";
+	    endNode = "";
+	    for (int i=0; i < flowFragmentList.size(); i++) {
+	    	if (flowFragmentList.get(i).displayName.equals("START")) {
+	    		startNode=flowFragmentList.get(i).id;
 	    	}
-	    	
+	    	if (flowFragmentList.get(i).displayName.equals("KONIEC")) {
+	    		endNode=flowFragmentList.get(i).id;
+	    	}
 	    }
+	    
+	    lastNode = startNode;
+	    output = "";
+	    
+	    do {
+		    for (int i = 0; i < connectionList.size(); i++) {
+		    	
+		    	if (connectionList.get(i).sourceIdRef.equals(lastNode)) {
+		    		
+		    		for (int x = 0; x < flowFragmentList.size(); x++) {
+		    			
+		    			if (flowFragmentList.get(x).id.equals(connectionList.get(i).sourceIdRef)) {
+		    				output += flowFragmentList.get(x).displayName+" -> ";
+		    				lastNode = connectionList.get(i).targetIdRef;
+		    				if (lastNode.equals(endNode)) theEnd = true;
+		    			}
+		    		}
+		    		
+		    	}
+		    }
+	    }
+	    while(!theEnd);
+	    
+	    System.out.println("START: " +output);
     }
 	
 	public static void main(String[] args) throws Exception {
