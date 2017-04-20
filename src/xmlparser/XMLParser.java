@@ -293,16 +293,25 @@ public class XMLParser {
 		    			if (flowFragmentList.get(x).id.equals(connectionList.get(i).sourceIdRef)) {
 		    				output += flowFragmentList.get(x).displayName+" -> ";
 		    				lastNode = connectionList.get(i).targetIdRef;
-		    				if (lastNode.equals(endNode)) theEnd = true;
+		    				
+		    				// KONIEC SZUKANIA ORAZ DODAWNIA OSTATNIEGO PUNKTU
+		    				if (lastNode.equals(endNode)) {
+		    					theEnd = true;
+		    					for (int j = 0; j < flowFragmentList.size(); j++) {
+		    						if (flowFragmentList.get(j).id.equals(endNode)) {
+		    							output += flowFragmentList.get(j).displayName;		
+		    						}
+		    					}
+		    				}
 		    			}
 		    		}
-		    		
 		    	}
 		    }
 	    }
 	    while(!theEnd);
 	    
-	    System.out.println("START: " +output);
+	    System.out.println("Przebieg: " +output);
+	    System.out.println();
     }
 	
 	public static void main(String[] args) throws Exception {
