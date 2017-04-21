@@ -13,6 +13,6 @@ public class A_DialogueFragment {
 	public ArrayList<String> pins;
 	
 	public A_DialogueFragment() {
-		
+		pins = new ArrayList<String>();
 	}
 }

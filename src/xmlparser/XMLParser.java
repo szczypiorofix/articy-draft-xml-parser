@@ -1,7 +1,9 @@
 package xmlparser;
 
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -101,9 +103,7 @@ public class XMLParser {
 	        						// REFERENCES
 	        						if (eNode.getNodeName().equals("References")) {	        							
 	        							NodeList refNodeList = eNode.getChildNodes();
-	        							
-	        							dialog.references = new ArrayList<String>();
-	        							
+	        								        							
 	        							for (int b = 0; b < refNodeList.getLength(); b++) {
 	        								Node rNode = refNodeList.item(b);
 	        								if (rNode instanceof Element) {
@@ -114,9 +114,7 @@ public class XMLParser {
 	        						// PINS
 	        						if (eNode.getNodeName().equals("Pins")) {	        							
 	        							NodeList pinNodeList = eNode.getChildNodes();
-	        							
-	        							dialog.pins = new ArrayList<String>();
-	        							
+	        								        							
 	        							for (int b = 0; b < pinNodeList.getLength(); b++) {
 	        								Node pNode = pinNodeList.item(b);
 	        								if (pNode instanceof Element) {
@@ -212,9 +210,7 @@ public class XMLParser {
 	        				}
 	        				connection.id = cNode.getAttributes().getNamedItem("Id").getNodeValue();
 	        				connectionList.add(connection);
-	        			}	        			
-	        			
-	        			
+	        			}
 	        		}
 	        	}
 	        }
@@ -267,6 +263,31 @@ public class XMLParser {
 	    
 	    System.out.println();
 	    System.out.println();
+	    System.out.println("Dołączanie połączeń do Flow Fragments");
+	    for (int i = 0; i < flowFragmentList.size(); i++) {
+	    	for (int j = 0; j < connectionList.size(); j++) {
+	    		if (flowFragmentList.get(i).id.equals(connectionList.get(j).sourceIdRef)) {
+	    			System.out.println("ID: " +j+ " " +flowFragmentList.get(i).id +"  +sourceIdRef: "+connectionList.get(j).targetIdRef);
+	    			flowFragmentList.get(i).sources.add(connectionList.get(j).sourceIdRef);
+	    			flowFragmentList.get(i).targets.add(connectionList.get(j).targetIdRef);
+	    		}
+	    	}
+	    }
+	    
+	    System.out.println();
+	    System.out.println("Teraz linki każdego z Flow Fialogs:");
+	    for (int i = 0; i < flowFragmentList.size(); i++) {
+	    	System.out.print("FLOW: "+i +" "+flowFragmentList.get(i).id);
+	    	for (int j = 0; j < flowFragmentList.get(i).sources.size(); j++) {
+	    		System.out.print(" "+flowFragmentList.get(i).sources.get(j));
+	    		System.out.print(" "+flowFragmentList.get(i).targets.get(j));
+	    	}
+	    	System.out.println();
+	    }
+	    
+	    
+	    System.out.println();
+	    System.out.println();
 	    System.out.println("Łączenie przygody 'do kupy': ");
 	    
 	    startNode = "";
@@ -291,17 +312,25 @@ public class XMLParser {
 		    		for (int x = 0; x < flowFragmentList.size(); x++) {
 		    			
 		    			if (flowFragmentList.get(x).id.equals(connectionList.get(i).sourceIdRef)) {
-		    				output += flowFragmentList.get(x).displayName+" -> ";
 		    				lastNode = connectionList.get(i).targetIdRef;
+		    				output += flowFragmentList.get(x).displayName+" " +connectionList.get(i).targetIdRef+" ";
+		    				
+		    				//System.out.println(flowFragmentList.get(x).displayName);
+		    				for (int j = 0; j < flowFragmentList.get(x).targets.size(); j++) {
+		    					for (int a = 0; a < flowFragmentList.size(); a++) {
+		    						if (flowFragmentList.get(a).id.equals(flowFragmentList.get(x).targets.get(j))) {
+		    							System.out.println(j+1+ " "+flowFragmentList.get(a).displayName);		
+		    						}
+		    					}
+		    				}
+		    				
+		    			    System.out.println("Wybierz opcje: ");
+		    			    Scanner keyboard = new Scanner(System.in);
+		    		        String input = keyboard.nextLine();
 		    				
 		    				// KONIEC SZUKANIA ORAZ DODAWNIA OSTATNIEGO PUNKTU
 		    				if (lastNode.equals(endNode)) {
 		    					theEnd = true;
-		    					for (int j = 0; j < flowFragmentList.size(); j++) {
-		    						if (flowFragmentList.get(j).id.equals(endNode)) {
-		    							output += flowFragmentList.get(j).displayName;		
-		    						}
-		    					}
 		    				}
 		    			}
 		    		}
@@ -309,9 +338,7 @@ public class XMLParser {
 		    }
 	    }
 	    while(!theEnd);
-	    
-	    System.out.println("Przebieg: " +output);
-	    System.out.println();
+	    System.out.println(output);
     }
 	
 	public static void main(String[] args) throws Exception {

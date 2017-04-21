@@ -13,6 +13,7 @@ public class A_Dialogue {
 
 	
 	public A_Dialogue() {
-		
+		references = new ArrayList<String>();
+		pins = new ArrayList<String>();
 	}
 }
