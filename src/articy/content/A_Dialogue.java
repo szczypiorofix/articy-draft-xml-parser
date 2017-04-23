@@ -2,9 +2,9 @@ package articy.content;
 
 import java.util.ArrayList;
 
-public class A_Dialogue {
+public class A_Dialogue extends ArticyDraftObjectClass {
 
-	public String id;
+	//public String id;
 	public String displayName;
 	public String text;
 	public String color;

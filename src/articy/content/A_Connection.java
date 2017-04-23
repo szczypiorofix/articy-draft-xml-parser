@@ -1,10 +1,10 @@
 package articy.content;
 
 
-public class A_Connection {
+public class A_Connection extends ArticyDraftObjectClass {
 
 	
-	public String id;
+	//public String id;
 	public String sourceIdRef;
 	public String sourcePinRef;
 	public String targetIdRef;

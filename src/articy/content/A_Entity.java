@@ -1,9 +1,9 @@
 package articy.content;
 
-public class A_Entity {
+public class A_Entity extends ArticyDraftObjectClass {
 
 	
-	public String id;
+	//public String id;
 	public String displayName;
 	public String features;
 	public String references;
