@@ -84,7 +84,6 @@ public class XMLParser {
 	        				}
 	        				entity.id = cNode.getAttributes().getNamedItem("Id").getNodeValue();
 	        				entityList.add(entity);
-	        				listOfAllObjects.add(entity);
 	        			}
 	        			
 	        			
@@ -388,23 +387,25 @@ public class XMLParser {
 		    			
 		    			if (listOfAllObjects.get(x).id.equals(connectionList.get(i).sourceIdRef)) {
 		    				lastNode = connectionList.get(i).targetIdRef;
+		    				System.out.println(connectionList.get(i).sourceIdRef+" -> "+lastNode);
+
 		    				
-		    				options = new ArrayList<String>();
-		    				optionsId = new ArrayList<String>();
-		    				
-		    				System.out.println("ID: "+listOfAllObjects.get(x).id);
-		    				System.out.println("OPIS: "+listOfAllObjects.get(x).displayName);
-		    				System.out.println();
-		    				System.out.println("Wybierz krok:");
-		    				
-		    				if (listOfAllObjects.get(x) instanceof A_FlowFragment) {
-		    					A_FlowFragment fragment = (A_FlowFragment) listOfAllObjects.get(x);
-		    					for (int j = 0; j < fragment.targets.size(); j++) {
-	    							System.out.println(j+ " "+fragment.displayName +" ("+lastNode+")");
-	    							options.add(fragment.displayName);
-	    							optionsId.add(fragment.id);
-			    				}
-		    				}
+//		    				options = new ArrayList<String>();
+//		    				optionsId = new ArrayList<String>();
+//		    				
+//		    				System.out.println("ID: "+listOfAllObjects.get(x).id);
+//		    				System.out.println("OPIS: "+listOfAllObjects.get(x).displayName);
+//		    				System.out.println();
+//		    				System.out.println("Wybierz krok:");
+//		    				
+//		    				if (listOfAllObjects.get(x) instanceof A_FlowFragment) {
+//		    					A_FlowFragment fragment = (A_FlowFragment) listOfAllObjects.get(x);
+//		    					for (int j = 0; j < fragment.targets.size(); j++) {
+//	    							System.out.println(j+ " "+fragment.displayName +" ("+lastNode+")");
+//	    							options.add(fragment.displayName);
+//	    							optionsId.add(fragment.id);
+//			    				}
+//		    				}
 		    				// KONIEC SZUKANIA ORAZ DODAWNIA OSTATNIEGO PUNKTU
 		    				if (lastNode.equals(endNode)) {
 		    					theEnd = true;
