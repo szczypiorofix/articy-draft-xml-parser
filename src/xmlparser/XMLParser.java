@@ -28,9 +28,9 @@ public class XMLParser {
 	private String output;
 	private String lastNode;
 	private String startNode, endNode;
+	private Scanner keyboard;
 	
 	private List<A_Entity> entityList = new ArrayList<A_Entity>();
-	
 	private List<A_Dialogue> dialogueList = new ArrayList<A_Dialogue>();
 	private List<A_DialogueFragment> dialogueFragmentList = new ArrayList<A_DialogueFragment>();
 	private List<A_FlowFragment> flowFragmentList = new ArrayList<A_FlowFragment>();
@@ -126,9 +126,7 @@ public class XMLParser {
 	        				}
 	        				dialog.id = cNode.getAttributes().getNamedItem("Id").getNodeValue();
 	        				dialogueList.add(dialog);
-	        			}
-	        			
-	        			
+	        			}		
 	        			
 	        			
 	        			///// ##### DIALOGUE FRAGMENT
@@ -186,7 +184,6 @@ public class XMLParser {
 	        			}
 	        			
 	        			
-	        			
 	        			///// ##### CONNECTION
 	        			if (cNode.getNodeName().equals("Connection")) {	        				
 	        				A_Connection connection = new A_Connection();
@@ -217,49 +214,49 @@ public class XMLParser {
 	    }
 	    
 	    
-//	    System.out.println("SPIS OBIEKTÓW ENTITY: ");
-//	    for (int i = 0; i < entityList.size(); i++) {
-//	    	System.out.println(entityList.get(i).displayName +", " +entityList.get(i).id);
-//	    }
-//	    
-//	    System.out.println();
-//	    System.out.println("SPIS OBIEKTÓW DIALOGUE: ");
-//	    for (int i = 0; i < dialogueList.size(); i++) {
-//	    	System.out.println(dialogueList.get(i).displayName +", " +dialogueList.get(i).id);
-//	    	System.out.println("Text: " +dialogueList.get(i).text);
-//	    	System.out.println("References:");
-//	    	for (int j = 0; j < dialogueList.get(i).references.size(); j++) {
-//	    		System.out.println("Ref: " +dialogueList.get(i).references.get(j));
-//	    	}
-//	    	System.out.println("Pins:");
-//	    	for (int j = 0; j < dialogueList.get(i).pins.size(); j++) {
-//	    		System.out.println("Pin: " +dialogueList.get(i).pins.get(j));
-//	    	}
-//	    }
-//	    
-//	    System.out.println();
-//	    System.out.println("SPIS OBIEKTÓW DIALOGUE FRAGMENT: ");
-//	    for (int i = 0; i < dialogueFragmentList.size(); i++) {
-//	    	System.out.println(dialogueFragmentList.get(i).displayName +", " +dialogueFragmentList.get(i).id);
-//	    	System.out.println("Text: " +dialogueFragmentList.get(i).text);
-//	    	System.out.println("MenuText: " +dialogueFragmentList.get(i).menuText);
-//	    	System.out.println("Speaker ID: " +dialogueFragmentList.get(i).speakerId);
-//	    }
-//	    
-//	    System.out.println();
-//	    System.out.println("SPIS OBIEKTÓW FLOW FRAGMENT: ");
-//	    for (int i = 0; i < flowFragmentList.size(); i++) {
-//	    	System.out.println(flowFragmentList.get(i).displayName +", " +flowFragmentList.get(i).id);
-//	    	System.out.println("Text: " +flowFragmentList.get(i).text);
-//	    }
-//	    
-//	    System.out.println();
-//	    System.out.println("SPIS OBIEKTÓW CONNECTION: ");
-//	    for (int i = 0; i < connectionList.size(); i++) {
-//	    	System.out.println("ID: "+connectionList.get(i).id);
-//	    	System.out.println("Source: " +connectionList.get(i).sourceIdRef +" -> " +connectionList.get(i).sourcePinRef);
-//	    	System.out.println("Target: " +connectionList.get(i).targetIdRef +" -> " +connectionList.get(i).targetPinRef);
-//	    }
+	    System.out.println("SPIS OBIEKTÓW ENTITY: ");
+	    for (int i = 0; i < entityList.size(); i++) {
+	    	System.out.println(entityList.get(i).displayName +", " +entityList.get(i).id);
+	    }
+	    
+	    System.out.println();
+	    System.out.println("SPIS OBIEKTÓW DIALOGUE: ");
+	    for (int i = 0; i < dialogueList.size(); i++) {
+	    	System.out.println(dialogueList.get(i).displayName +", " +dialogueList.get(i).id);
+	    	System.out.println("Text: " +dialogueList.get(i).text);
+	    	System.out.println("References:");
+	    	for (int j = 0; j < dialogueList.get(i).references.size(); j++) {
+	    		System.out.println("Ref: " +dialogueList.get(i).references.get(j));
+	    	}
+	    	System.out.println("Pins:");
+	    	for (int j = 0; j < dialogueList.get(i).pins.size(); j++) {
+	    		System.out.println("Pin: " +dialogueList.get(i).pins.get(j));
+	    	}
+	    }
+	    
+	    System.out.println();
+	    System.out.println("SPIS OBIEKTÓW DIALOGUE FRAGMENT: ");
+	    for (int i = 0; i < dialogueFragmentList.size(); i++) {
+	    	System.out.println(dialogueFragmentList.get(i).displayName +", " +dialogueFragmentList.get(i).id);
+	    	System.out.println("Text: " +dialogueFragmentList.get(i).text);
+	    	System.out.println("MenuText: " +dialogueFragmentList.get(i).menuText);
+	    	System.out.println("Speaker ID: " +dialogueFragmentList.get(i).speakerId);
+	    }
+	    
+	    System.out.println();
+	    System.out.println("SPIS OBIEKTÓW FLOW FRAGMENT: ");
+	    for (int i = 0; i < flowFragmentList.size(); i++) {
+	    	System.out.println(flowFragmentList.get(i).displayName +", " +flowFragmentList.get(i).id);
+	    	System.out.println("Text: " +flowFragmentList.get(i).text);
+	    }
+	    
+	    System.out.println();
+	    System.out.println("SPIS OBIEKTÓW CONNECTION: ");
+	    for (int i = 0; i < connectionList.size(); i++) {
+	    	System.out.println("ID: "+connectionList.get(i).id);
+	    	System.out.println("Source: " +connectionList.get(i).sourceIdRef +" -> " +connectionList.get(i).sourcePinRef);
+	    	System.out.println("Target: " +connectionList.get(i).targetIdRef +" -> " +connectionList.get(i).targetPinRef);
+	    }
 	    
 	    System.out.println();
 	    System.out.println();
@@ -304,6 +301,7 @@ public class XMLParser {
 	    lastNode = startNode;
 	    output = "";
 	    List<String> options = new ArrayList<String>();
+	    List<String> optionsId = new ArrayList<String>();
 	    boolean goodChoice = true;
 	    
 	    do {
@@ -315,47 +313,41 @@ public class XMLParser {
 		    			
 		    			if (flowFragmentList.get(x).id.equals(connectionList.get(i).sourceIdRef)) {
 		    				lastNode = connectionList.get(i).targetIdRef;
-		    				//output += flowFragmentList.get(x).displayName+" " +connectionList.get(i).targetIdRef+" ";
-		    				//System.out.println(flowFragmentList.get(x).displayName);
 		    				
 		    				options = new ArrayList<String>();
+		    				optionsId = new ArrayList<String>();
 		    				
+		    				System.out.println("Tytuł: "+flowFragmentList.get(x).displayName);
+		    				System.out.println("OPIS: "+flowFragmentList.get(x).text);
+		    				System.out.println();
+		    				System.out.println("Wybierz krok:");
 		    				for (int j = 0; j < flowFragmentList.get(x).targets.size(); j++) {
 		    					for (int a = 0; a < flowFragmentList.size(); a++) {
 		    						if (flowFragmentList.get(a).id.equals(flowFragmentList.get(x).targets.get(j))) {
 		    							System.out.println(j+ " "+flowFragmentList.get(a).displayName +" ("+lastNode+")");
 		    							options.add(flowFragmentList.get(a).displayName);
+		    							optionsId.add(flowFragmentList.get(a).id);
 		    						}
 		    					}
 		    				}
 		    				
 		    				do {
-			    			    System.out.print("Wybierz opcje: ");
-			    			    for (int b = 0; b < options.size(); b++) System.out.print(options.get(b)+" ");
+			    			    System.out.print("Twój wybór:");
 			    			    System.out.println();
-			    			    Scanner keyboard = new Scanner(System.in);
+			    			    keyboard = new Scanner(System.in);
 			    		        String input = keyboard.nextLine();
 			    		        
-		    		        	if (Integer.valueOf(input) >= 0 && Integer.valueOf(input) < options.size()) {
-		    		        		System.out.println("Wybrano: "+input);
+		    		        	if (Integer.valueOf(input) >= 0 && Integer.valueOf(input) < optionsId.size()) {
+		    		        		goodChoice = true;
+		    		        		lastNode = optionsId.get(Integer.valueOf(input));
 		    		        	}
 		    		        	else {
 		    		        		System.out.println("Błędny wybór!");
 		    		        		goodChoice = false;
 		    		        	}
 		    				}
-		    				while(goodChoice);
-
-		    		        
-	    		        	
-//		    		        for (int j = 0; j < flowFragmentList.get(x).targets.size(); j++) {
-//		    					for (int a = 0; a < flowFragmentList.size(); a++) {
-//		    						if (flowFragmentList.get(a).id.equals(flowFragmentList.get(x).targets.get(j))) {
-//		    							
-//		    						}
-//		    					}
-//		    				}
-		    		        
+		    				while(!goodChoice);
+	    		        
 		    				
 		    				// KONIEC SZUKANIA ORAZ DODAWNIA OSTATNIEGO PUNKTU
 		    				if (lastNode.equals(endNode)) {
@@ -368,6 +360,7 @@ public class XMLParser {
 	    }
 	    while(!theEnd);
 	    System.out.println(output);
+	    keyboard.close();
     }
 	
 	public static void main(String[] args) throws Exception {

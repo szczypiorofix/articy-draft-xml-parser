@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
-<Export xmlns="http://www.nevigo.com/schemas/articydraft/2.4/XmlContentExport_FullProject.xsd" Version="2.4" CreatorTool="articy:draft" CreatorVersion="2.4.13" CreatedOn="2017-04-22T20:20:52Z">
+<Export xmlns="http://www.nevigo.com/schemas/articydraft/2.4/XmlContentExport_FullProject.xsd" Version="2.4" CreatorTool="articy:draft" CreatorVersion="2.4.13" CreatedOn="2017-04-25T07:00:46Z">
   <Settings>
     <ExportMarkup>1</ExportMarkup>
     <ExportQueries>1</ExportQueries>
@@ -297,6 +297,51 @@
       <AssetPath>Assets\Partition(78b78c0e-fc8e-4307-91ea-7d22b14ae3ea)\</AssetPath>
       <OriginalSource>file:///C:/Users/Semiko/Dropbox/Articy Draft/Assets/Asylum.jpg</OriginalSource>
     </Asset>
+    <Connection Id="0x010000000000020E">
+      <Color>#C8E2E7</Color>
+      <TechnicalName>Con_AC4A3D68</TechnicalName>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928462</Url>
+      <Label Count="0"/>
+      <Source IdRef="0x0100000000000117" PinRef="0x010000000000011A"/>
+      <Target IdRef="0x0100000000000208" PinRef="0x010000000000020B"/>
+      <ShowLabel>0</ShowLabel>
+    </Connection>
+    <Connection Id="0x0100000000000222">
+      <Color>#C8E2E7</Color>
+      <TechnicalName>Con_254A8AE4</TechnicalName>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928482</Url>
+      <Label Count="0"/>
+      <Source IdRef="0x0100000000000208" PinRef="0x010000000000020C"/>
+      <Target IdRef="0x010000000000021C" PinRef="0x010000000000021F"/>
+      <ShowLabel>0</ShowLabel>
+    </Connection>
+    <Connection Id="0x0100000000000223">
+      <Color>#C8E2E7</Color>
+      <TechnicalName>Con_56903C63</TechnicalName>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928483</Url>
+      <Label Count="0"/>
+      <Source IdRef="0x010000000000021C" PinRef="0x0100000000000220"/>
+      <Target IdRef="0x0100000000000117" PinRef="0x010000000000011B"/>
+      <ShowLabel>0</ShowLabel>
+    </Connection>
+    <Connection Id="0x0100000000000219">
+      <Color>#C8E2E7</Color>
+      <TechnicalName>Con_0EFC73B2</TechnicalName>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928473</Url>
+      <Label Count="0"/>
+      <Source IdRef="0x0100000000000182" PinRef="0x0100000000000185"/>
+      <Target IdRef="0x0100000000000213" PinRef="0x0100000000000216"/>
+      <ShowLabel>0</ShowLabel>
+    </Connection>
+    <Connection Id="0x010000000000021A">
+      <Color>#C8E2E7</Color>
+      <TechnicalName>Con_86C5784A</TechnicalName>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928474</Url>
+      <Label Count="0"/>
+      <Source IdRef="0x0100000000000213" PinRef="0x0100000000000217"/>
+      <Target IdRef="0x0100000000000182" PinRef="0x0100000000000186"/>
+      <ShowLabel>0</ShowLabel>
+    </Connection>
     <Connection Id="0x010000000000018D">
       <Color>#C8E2E7</Color>
       <TechnicalName>Con_D5B8EE31</TechnicalName>
@@ -396,6 +441,32 @@
       <Target IdRef="0x01000000000001C0" PinRef="0x01000000000001C1"/>
       <ShowLabel>0</ShowLabel>
     </Connection>
+    <Dialogue Id="0x0100000000000213">
+      <DisplayName Count="1">
+        <LocalizedString Lang="">Dialog w epizodzie 2</LocalizedString>
+      </DisplayName>
+      <Text Count="1" HasMarkup="1">
+        <LocalizedString Lang=""><![CDATA[<html><head><style>#s0 {text-align:left;} #s1 {font-size:11pt;} </style></head><body><p id="s0"><span id="s1">To jest dialog w erpizodzie 2.</span></p></body></html>]]></LocalizedString>
+      </Text>
+      <Color>#C8E2E7</Color>
+      <TechnicalName>Dlg_D5B59B0A</TechnicalName>
+      <ExternalId/>
+      <ShortId>0xD5B59B0A</ShortId>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928467</Url>
+      <Features Count="0"/>
+      <References Count="0"/>
+      <Pins Count="2">
+        <Pin Id="0x0100000000000216" Index="0" Semantic="Input">
+          <Expression/>
+        </Pin>
+        <Pin Id="0x0100000000000217" Index="0" Semantic="Output">
+          <Expression/>
+        </Pin>
+      </Pins>
+      <Position X="642" Y="325"/>
+      <Size Width="291" Height="200"/>
+      <ZIndex>0</ZIndex>
+    </Dialogue>
     <Entity Id="0x0100000000000108">
       <DisplayName Count="1">
         <LocalizedString Lang="">Gracz</LocalizedString>
@@ -463,6 +534,64 @@
       <Position X="50" Y="275"/>
       <Size Width="275" Height="200"/>
       <ZIndex>0</ZIndex>
+    </FlowFragment>
+    <FlowFragment Id="0x0100000000000208">
+      <DisplayName Count="1">
+        <LocalizedString Lang="">Fragment flow w prologu</LocalizedString>
+      </DisplayName>
+      <Text Count="1" HasMarkup="1">
+        <LocalizedString Lang=""><![CDATA[<html><head><style>#s0 {text-align:left;} #s1 {font-size:11pt;} </style></head><body><p id="s0"><span id="s1">To jest fragment flow w prologu</span></p></body></html>]]></LocalizedString>
+      </Text>
+      <Color>#C8E2E7</Color>
+      <TechnicalName>FFr_3BA11B6A</TechnicalName>
+      <ExternalId/>
+      <ShortId>0x3BA11B6A</ShortId>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928456</Url>
+      <Features Count="0"/>
+      <References Count="2">
+        <Reference IdRef="0x010000000000010C"/>
+        <Reference IdRef="0x0100000000000108"/>
+      </References>
+      <Pins Count="2">
+        <Pin Id="0x010000000000020B" Index="0" Semantic="Input">
+          <Expression/>
+        </Pin>
+        <Pin Id="0x010000000000020C" Index="0" Semantic="Output">
+          <Expression/>
+        </Pin>
+      </Pins>
+      <Position X="575" Y="325"/>
+      <Size Width="275" Height="200"/>
+      <ZIndex>0</ZIndex>
+    </FlowFragment>
+    <FlowFragment Id="0x010000000000021C">
+      <DisplayName Count="1">
+        <LocalizedString Lang="">Drugi fragment flow w prologu</LocalizedString>
+      </DisplayName>
+      <Text Count="1" HasMarkup="1">
+        <LocalizedString Lang=""><![CDATA[<html><head><style>#s0 {text-align:left;} #s1 {font-size:11pt;} </style></head><body><p id="s0"><span id="s1">To drugi fragment flow w prologu.</span></p></body></html>]]></LocalizedString>
+      </Text>
+      <Color>#C8E2E7</Color>
+      <TechnicalName>FFr_D4426BD3</TechnicalName>
+      <ExternalId/>
+      <ShortId>0xD4426BD3</ShortId>
+      <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928476</Url>
+      <Features Count="0"/>
+      <References Count="2">
+        <Reference IdRef="0x010000000000010C"/>
+        <Reference IdRef="0x0100000000000108"/>
+      </References>
+      <Pins Count="2">
+        <Pin Id="0x010000000000021F" Index="0" Semantic="Input">
+          <Expression/>
+        </Pin>
+        <Pin Id="0x0100000000000220" Index="0" Semantic="Output">
+          <Expression/>
+        </Pin>
+      </Pins>
+      <Position X="975" Y="325"/>
+      <Size Width="275" Height="200"/>
+      <ZIndex>3</ZIndex>
     </FlowFragment>
     <FlowFragment Id="0x0100000000000179">
       <DisplayName Count="1">
@@ -734,9 +863,19 @@
   <Hierarchy>
     <Node IdRef="0x0100000000000001" Type="Project">
       <Node IdRef="0x0300000043CE43F7" Type="Flow">
-        <Node IdRef="0x0100000000000117" Type="FlowFragment"/>
+        <Node IdRef="0x0100000000000117" Type="FlowFragment">
+          <Node IdRef="0x0100000000000208" Type="FlowFragment"/>
+          <Node IdRef="0x010000000000020E" Type="Connection"/>
+          <Node IdRef="0x010000000000021C" Type="FlowFragment"/>
+          <Node IdRef="0x0100000000000222" Type="Connection"/>
+          <Node IdRef="0x0100000000000223" Type="Connection"/>
+        </Node>
         <Node IdRef="0x0100000000000179" Type="FlowFragment"/>
-        <Node IdRef="0x0100000000000182" Type="FlowFragment"/>
+        <Node IdRef="0x0100000000000182" Type="FlowFragment">
+          <Node IdRef="0x0100000000000213" Type="Dialogue"/>
+          <Node IdRef="0x0100000000000219" Type="Connection"/>
+          <Node IdRef="0x010000000000021A" Type="Connection"/>
+        </Node>
         <Node IdRef="0x010000000000018D" Type="Connection"/>
         <Node IdRef="0x010000000000018E" Type="Connection"/>
         <Node IdRef="0x010000000000018F" Type="FlowFragment"/>
