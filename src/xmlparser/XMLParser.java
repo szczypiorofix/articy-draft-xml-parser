@@ -18,6 +18,7 @@ import articy.content.A_Dialogue;
 import articy.content.A_DialogueFragment;
 import articy.content.A_Entity;
 import articy.content.A_FlowFragment;
+import articy.content.ArticyDraftObjectClass;
 
 
 
@@ -35,6 +36,8 @@ public class XMLParser {
 	private List<A_DialogueFragment> dialogueFragmentList = new ArrayList<A_DialogueFragment>();
 	private List<A_FlowFragment> flowFragmentList = new ArrayList<A_FlowFragment>();
 	private List<A_Connection> connectionList = new ArrayList<A_Connection>();
+	
+	private List<ArticyDraftObjectClass> listOfAllObjects = new ArrayList<ArticyDraftObjectClass>();
 	
 	
     private DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -81,6 +84,7 @@ public class XMLParser {
 	        				}
 	        				entity.id = cNode.getAttributes().getNamedItem("Id").getNodeValue();
 	        				entityList.add(entity);
+	        				listOfAllObjects.add(entity);
 	        			}
 	        			
 	        			
@@ -126,6 +130,7 @@ public class XMLParser {
 	        				}
 	        				dialog.id = cNode.getAttributes().getNamedItem("Id").getNodeValue();
 	        				dialogueList.add(dialog);
+	        				listOfAllObjects.add(dialog);
 	        			}		
 	        			
 	        			
@@ -154,8 +159,9 @@ public class XMLParser {
 	        						
 	        					}	        					
 	        				}
-	        				dialogFragment.id = cNode.getAttributes().getNamedItem("Id").toString();
+	        				dialogFragment.id = cNode.getAttributes().getNamedItem("Id").getNodeValue();
 	        				dialogueFragmentList.add(dialogFragment);
+	        				listOfAllObjects.add(dialogFragment);
 	        			}
 
 	        			
@@ -174,13 +180,23 @@ public class XMLParser {
 	        						case "Text":
 	        							flowFragment.text = eNode.getTextContent().trim();
 										break;
+		        					case "Pins":
+		        						NodeList pinsChildNodes = eNode.getChildNodes();
+		        						for (int b = 0; b < pinsChildNodes.getLength(); b++) {
+		        							Node pNode = pinsChildNodes.item(b);
+		        							if (pNode instanceof Element) {
+		        								//System.out.println("Pins: "+pNode.getAttributes().getNamedItem("Id").getNodeValue());
+		        								flowFragment.pins.add(pNode.getAttributes().getNamedItem("Id").getNodeValue());
+		        							}
+		        						}
+										break;
 	        						}
-	        						
 	        					}	        					
 	        				}
 	        				
 	        				flowFragment.id = cNode.getAttributes().getNamedItem("Id").getNodeValue();
 	        				flowFragmentList.add(flowFragment);
+	        				listOfAllObjects.add(flowFragment);
 	        			}
 	        			
 	        			
@@ -282,6 +298,9 @@ public class XMLParser {
 	    	System.out.println();
 	    }
 	    
+	    System.out.println();
+	    System.out.println("Wszystkie obiekty w grze:");
+	    for (int i = 0; i < listOfAllObjects.size(); i++) System.out.println(listOfAllObjects.get(i).id);
 	    
 	    System.out.println();
 	    System.out.println();
@@ -305,50 +324,87 @@ public class XMLParser {
 	    boolean goodChoice = true;
 	    
 	    do {
-		    for (int i = 0; i < connectionList.size(); i++) {
+//		    for (int i = 0; i < connectionList.size(); i++) {
+//		    	
+//		    	if (connectionList.get(i).sourceIdRef.equals(lastNode)) {
+//		    		
+//		    		for (int x = 0; x < flowFragmentList.size(); x++) {
+//		    			
+//		    			if (flowFragmentList.get(x).id.equals(connectionList.get(i).sourceIdRef)) {
+//		    				lastNode = connectionList.get(i).targetIdRef;
+//		    				
+//		    				options = new ArrayList<String>();
+//		    				optionsId = new ArrayList<String>();
+//		    				
+//		    				System.out.println("Tytuł: "+flowFragmentList.get(x).displayName);
+//		    				System.out.println("OPIS: "+flowFragmentList.get(x).text);
+//		    				System.out.println();
+//		    				System.out.println("Wybierz krok:");
+//		    				for (int j = 0; j < flowFragmentList.get(x).targets.size(); j++) {
+//		    					for (int a = 0; a < flowFragmentList.size(); a++) {
+//		    						if (flowFragmentList.get(a).id.equals(flowFragmentList.get(x).targets.get(j))) {
+//		    							System.out.println(j+ " "+flowFragmentList.get(a).displayName +" ("+lastNode+")");
+//		    							options.add(flowFragmentList.get(a).displayName);
+//		    							optionsId.add(flowFragmentList.get(a).id);
+//		    						}
+//		    					}
+//		    				}
+//		    				
+//		    				do {
+//			    			    System.out.print("Twój wybór:");
+//			    			    System.out.println();
+//			    			    keyboard = new Scanner(System.in);
+//			    		        String input = keyboard.nextLine();
+//			    		        
+//		    		        	if (Integer.valueOf(input) >= 0 && Integer.valueOf(input) < optionsId.size()) {
+//		    		        		goodChoice = true;
+//		    		        		lastNode = optionsId.get(Integer.valueOf(input));
+//		    		        	}
+//		    		        	else {
+//		    		        		System.out.println("Błędny wybór!");
+//		    		        		goodChoice = false;
+//		    		        	}
+//		    				}
+//		    				while(!goodChoice);
+//	    		        
+//		    				
+//		    				// KONIEC SZUKANIA ORAZ DODAWNIA OSTATNIEGO PUNKTU
+//		    				if (lastNode.equals(endNode)) {
+//		    					theEnd = true;
+//		    				}
+//		    			}
+//		    		}
+//		    	}
+//		    }
+	    	
+	    	
+	    	
+	    	
+	    	for (int i = 0; i < connectionList.size(); i++) {
 		    	
 		    	if (connectionList.get(i).sourceIdRef.equals(lastNode)) {
 		    		
-		    		for (int x = 0; x < flowFragmentList.size(); x++) {
+		    		for (int x = 0; x < listOfAllObjects.size(); x++) {
 		    			
-		    			if (flowFragmentList.get(x).id.equals(connectionList.get(i).sourceIdRef)) {
+		    			if (listOfAllObjects.get(x).id.equals(connectionList.get(i).sourceIdRef)) {
 		    				lastNode = connectionList.get(i).targetIdRef;
 		    				
 		    				options = new ArrayList<String>();
 		    				optionsId = new ArrayList<String>();
 		    				
-		    				System.out.println("Tytuł: "+flowFragmentList.get(x).displayName);
-		    				System.out.println("OPIS: "+flowFragmentList.get(x).text);
+		    				System.out.println("ID: "+listOfAllObjects.get(x).id);
+		    				System.out.println("OPIS: "+listOfAllObjects.get(x).displayName);
 		    				System.out.println();
 		    				System.out.println("Wybierz krok:");
-		    				for (int j = 0; j < flowFragmentList.get(x).targets.size(); j++) {
-		    					for (int a = 0; a < flowFragmentList.size(); a++) {
-		    						if (flowFragmentList.get(a).id.equals(flowFragmentList.get(x).targets.get(j))) {
-		    							System.out.println(j+ " "+flowFragmentList.get(a).displayName +" ("+lastNode+")");
-		    							options.add(flowFragmentList.get(a).displayName);
-		    							optionsId.add(flowFragmentList.get(a).id);
-		    						}
-		    					}
-		    				}
 		    				
-		    				do {
-			    			    System.out.print("Twój wybór:");
-			    			    System.out.println();
-			    			    keyboard = new Scanner(System.in);
-			    		        String input = keyboard.nextLine();
-			    		        
-		    		        	if (Integer.valueOf(input) >= 0 && Integer.valueOf(input) < optionsId.size()) {
-		    		        		goodChoice = true;
-		    		        		lastNode = optionsId.get(Integer.valueOf(input));
-		    		        	}
-		    		        	else {
-		    		        		System.out.println("Błędny wybór!");
-		    		        		goodChoice = false;
-		    		        	}
+		    				if (listOfAllObjects.get(x) instanceof A_FlowFragment) {
+		    					A_FlowFragment fragment = (A_FlowFragment) listOfAllObjects.get(x);
+		    					for (int j = 0; j < fragment.targets.size(); j++) {
+	    							System.out.println(j+ " "+fragment.displayName +" ("+lastNode+")");
+	    							options.add(fragment.displayName);
+	    							optionsId.add(fragment.id);
+			    				}
 		    				}
-		    				while(!goodChoice);
-	    		        
-		    				
 		    				// KONIEC SZUKANIA ORAZ DODAWNIA OSTATNIEGO PUNKTU
 		    				if (lastNode.equals(endNode)) {
 		    					theEnd = true;
@@ -360,7 +416,6 @@ public class XMLParser {
 	    }
 	    while(!theEnd);
 	    System.out.println(output);
-	    keyboard.close();
     }
 	
 	public static void main(String[] args) throws Exception {

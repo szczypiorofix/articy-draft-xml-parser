@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 public class A_FlowFragment extends ArticyDraftObjectClass {
 
-	//public String id;
-	public String displayName;
 	public String text;
 	public String color;
 	public ArrayList<String> references;
@@ -16,5 +14,7 @@ public class A_FlowFragment extends ArticyDraftObjectClass {
 	public A_FlowFragment() {
 		sources = new ArrayList<String>();
 		targets = new ArrayList<String>();
+		pins = new ArrayList<String>();
+		references = new ArrayList<String>();
 	}
 }
