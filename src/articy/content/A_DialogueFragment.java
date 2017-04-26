@@ -1,6 +1,5 @@
 package articy.content;
 
-import java.util.ArrayList;
 
 public class A_DialogueFragment extends ArticyDraftObject {
 	

@@ -239,10 +239,10 @@ public class XMLParser {
 	    for (int i = 0; i < dialogueList.size(); i++) {
 	    	System.out.println(dialogueList.get(i).displayName +", " +dialogueList.get(i).id);
 	    	System.out.println("Text: " +dialogueList.get(i).text);
-	    	System.out.println("References:");
-	    	for (int j = 0; j < dialogueList.get(i).references.size(); j++) {
-	    		System.out.println("Ref: " +dialogueList.get(i).references.get(j));
-	    	}
+	    	//System.out.println("References:");
+	    	//for (int j = 0; j < dialogueList.get(i).references.size(); j++) {
+	    	//	System.out.println("Ref: " +dialogueList.get(i).references.get(j));
+	    	//}
 	    	System.out.println("Pins:");
 	    	for (int j = 0; j < dialogueList.get(i).pins.size(); j++) {
 	    		System.out.println("Pin: " +dialogueList.get(i).pins.get(j));
@@ -334,16 +334,13 @@ public class XMLParser {
 	    			System.out.println(listOfAllObjects.get(i).displayName+" : "+listOfAllObjects.get(i).id);
 	    			
 	    			for (int j = 0; j < connectionList.size(); j++) {
-	    				if (connectionList.get(j).sourceIdRef.equals(listOfAllObjects.get(i).id)) {
-	    					lastNode = connectionList.get(j).targetIdRef;
-	    					//System.out.println(lastNode);
-	    					for (int k = 0; k < listOfAllObjects.size(); k++) {
-	    						if (lastNode.equalsIgnoreCase(listOfAllObjects.get(k).id)) {
-	    							lastNode = listOfAllObjects.get(k).id;
-	    							//System.out.println(listOfAllObjects.get(k).displayName);
-	    							System.out.println(listOfAllObjects.get(k).displayName+" : "+listOfAllObjects.get(k).id);
-	    						}
-	    					}
+	    				
+    					if (connectionList.get(j).sourceIdRef.equals(listOfAllObjects.get(i).id)) {
+    						
+    						//for (int k = 0; k < listr)
+    						lastNode = connectionList.get(j).targetIdRef;
+	    					
+	    					System.out.println("S: "+connectionList.get(j).sourceIdRef +" T: "+connectionList.get(j).targetIdRef);
 	    				}
 	    			}
 	    		}
