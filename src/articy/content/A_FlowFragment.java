@@ -2,7 +2,7 @@ package articy.content;
 
 import java.util.ArrayList;
 
-public class A_FlowFragment extends ArticyDraftObjectClass {
+public class A_FlowFragment extends ArticyDraftObject {
 
 	public String text;
 	public String color;

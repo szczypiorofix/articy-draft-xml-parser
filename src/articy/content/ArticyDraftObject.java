@@ -3,7 +3,7 @@ package articy.content;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class ArticyDraftObjectClass {
+public abstract class ArticyDraftObject {
 
 	public String id;
 	public String displayName;
