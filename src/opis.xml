@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<Content>
+  <Connection Id="0x010000000000019C">
+    <Color>#C8E2E7</Color>
+    <TechnicalName>Con_97F3EA4F</TechnicalName>
+    <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928348</Url>
+    <Label Count="0"/>
+    <Source IdRef="0x0100000000000196" PinRef="0x010000000000019A"/>
+    <Target IdRef="0x0100000000000117" PinRef="0x010000000000011A"/>
+    <ShowLabel>0</ShowLabel>
+  </Connection>
+  <Connection Id="0x010000000000024E">
+    <Color>#C8E2E7</Color>
+    <TechnicalName>Con_B29BB347</TechnicalName>
+    <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928526</Url>
+    <Label Count="0"/>
+    <Source IdRef="0x0100000000000117" PinRef="0x010000000000011B"/>
+    <Target IdRef="0x010000000000018F" PinRef="0x0100000000000192"/>
+    <ShowLabel>0</ShowLabel>
+  </Connection>
+  <Entity Id="0x0100000000000108">
+    <DisplayName Count="1">
+      <LocalizedString Lang="">Gracz</LocalizedString>
+    </DisplayName>
+    <Text Count="1" HasMarkup="1">
+      <LocalizedString Lang=""><![CDATA[<html><head><style>#s0 {text-align:left;} #s1 {font-size:11pt;} </style></head><body><p id="s0"><span id="s1">To jest nasz gł&#243;wny bohater.</span></p></body></html>]]></LocalizedString>
+    </Text>
+    <Color>#C8E2E7</Color>
+    <TechnicalName>Ntt_BD1B5D81</TechnicalName>
+    <ExternalId/>
+    <ShortId>0xBD1B5D81</ShortId>
+    <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928200</Url>
+    <Features Count="0"/>
+    <References Count="0"/>
+    <PreviewImage IdRef="0x0100000000000110" Mode="FromAsset">
+      <ViewBox MinX="0" MinY="0" MaxX="0" MaxY="0"/>
+    </PreviewImage>
+  </Entity>
+  <Entity Id="0x010000000000010C">
+    <DisplayName Count="1">
+      <LocalizedString Lang="">Narrator</LocalizedString>
+    </DisplayName>
+    <Text Count="1" HasMarkup="1">
+      <LocalizedString Lang=""><![CDATA[<html><head><style>#s0 {text-align:left;} #s1 {font-size:11pt;} </style></head><body><p id="s0"><span id="s1">To jest postać narratora gry.</span></p></body></html>]]></LocalizedString>
+    </Text>
+    <Color>#C8E2E7</Color>
+    <TechnicalName>Ntt_24CDCAC6</TechnicalName>
+    <ExternalId/>
+    <ShortId>0x24CDCAC6</ShortId>
+    <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928204</Url>
+    <Features Count="0"/>
+    <References Count="0"/>
+    <PreviewImage IdRef="0x0100000000000114" Mode="FromAsset">
+      <ViewBox MinX="0" MinY="0" MaxX="0" MaxY="0"/>
+    </PreviewImage>
+  </Entity>
+  <FlowFragment Id="0x0100000000000117">
+    <DisplayName Count="1">
+      <LocalizedString Lang="">PROLOG</LocalizedString>
+    </DisplayName>
+    <Text Count="1" HasMarkup="1">
+      <LocalizedString Lang=""><![CDATA[<html><head><style>#s0 {text-align:left;} #s1 {font-size:11pt;} </style></head><body><p id="s0"><span id="s1">Witaj w prologu gry!</span></p></body></html>]]></LocalizedString>
+    </Text>
+    <Color>#C8E2E7</Color>
+    <TechnicalName>FFr_074BCC35</TechnicalName>
+    <ExternalId/>
+    <ShortId>0x074BCC35</ShortId>
+    <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928215</Url>
+    <Features Count="0"/>
+    <References Count="0"/>
+    <Pins Count="2">
+      <Pin Id="0x010000000000011A" Index="0" Semantic="Input">
+        <Expression/>
+      </Pin>
+      <Pin Id="0x010000000000011B" Index="0" Semantic="Output">
+        <Expression/>
+      </Pin>
+    </Pins>
+    <Position X="25" Y="275"/>
+    <Size Width="275" Height="200"/>
+    <ZIndex>0</ZIndex>
+  </FlowFragment>
+  <FlowFragment Id="0x010000000000018F">
+    <DisplayName Count="1">
+      <LocalizedString Lang="">KONIEC</LocalizedString>
+    </DisplayName>
+    <Text Count="1" HasMarkup="1">
+      <LocalizedString Lang=""><![CDATA[<html><head><style>#s0 {text-align:left;} #s1 {font-size:11pt;} </style></head><body><p id="s0"><span id="s1">Koniec</span></p></body></html>]]></LocalizedString>
+    </Text>
+    <Color>#C8E2E7</Color>
+    <TechnicalName>FFr_118B778B</TechnicalName>
+    <ExternalId/>
+    <ShortId>0x118B778B</ShortId>
+    <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928335</Url>
+    <Features Count="0"/>
+    <References Count="0"/>
+    <Pins Count="2">
+      <Pin Id="0x0100000000000192" Index="0" Semantic="Input">
+        <Expression/>
+      </Pin>
+      <Pin Id="0x010000000000028D" Index="0" Semantic="Output">
+        <Expression/>
+      </Pin>
+    </Pins>
+    <Position X="400" Y="275"/>
+    <Size Width="275" Height="200"/>
+    <ZIndex>5</ZIndex>
+  </FlowFragment>
+  <FlowFragment Id="0x0100000000000196">
+    <DisplayName Count="1">
+      <LocalizedString Lang="">START</LocalizedString>
+    </DisplayName>
+    <Text Count="1" HasMarkup="1">
+      <LocalizedString Lang=""><![CDATA[<html><head><style>#s0 {text-align:left;} #s1 {font-size:11pt;} </style></head><body><p id="s0"><span id="s1">START</span></p></body></html>]]></LocalizedString>
+    </Text>
+    <Color>#C8E2E7</Color>
+    <TechnicalName>FFr_B8625CAD</TechnicalName>
+    <ExternalId/>
+    <ShortId>0xB8625CAD</ShortId>
+    <Url>articy://localhost/view/e8b6e57a-3ae1-49e9-9615-795b40f455aa/72057594037928342</Url>
+    <Features Count="0"/>
+    <References Count="0"/>
+    <Pins Count="2">
+      <Pin Id="0x010000000000028C" Index="0" Semantic="Input">
+        <Expression/>
+      </Pin>
+      <Pin Id="0x010000000000019A" Index="0" Semantic="Output">
+        <Expression/>
+      </Pin>
+    </Pins>
+    <Position X="-325" Y="275"/>
+    <Size Width="275" Height="200"/>
+    <ZIndex>7</ZIndex>
+  </FlowFragment>
+</Content>

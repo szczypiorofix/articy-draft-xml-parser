@@ -121,7 +121,12 @@ public class XMLParser {
 	        							for (int b = 0; b < pinNodeList.getLength(); b++) {
 	        								Node pNode = pinNodeList.item(b);
 	        								if (pNode instanceof Element) {
-		        								dialog.pins.add(pNode.getAttributes().getNamedItem("Id").getNodeValue());
+	        									if (pNode.getAttributes().getNamedItem("Semantic").getNodeValue().equals("Input")) {
+	        										dialog.pinsInput.add(pNode.getAttributes().getNamedItem("Id").getNodeValue());
+	        									}
+	        									if (pNode.getAttributes().getNamedItem("Semantic").getNodeValue().equals("Output")) {
+	        										dialog.pinsOutput.add(pNode.getAttributes().getNamedItem("Id").getNodeValue());
+	        									}
 	        								}
 	        							}
 	        						}
@@ -184,8 +189,15 @@ public class XMLParser {
 		        						for (int b = 0; b < pinsChildNodes.getLength(); b++) {
 		        							Node pNode = pinsChildNodes.item(b);
 		        							if (pNode instanceof Element) {
-		        								//System.out.println("Pins: "+pNode.getAttributes().getNamedItem("Id").getNodeValue());
-		        								flowFragment.pins.add(pNode.getAttributes().getNamedItem("Id").getNodeValue());
+		        								
+		        								//flowFragment.pins.add(pNode.getAttributes().getNamedItem("Id").getNodeValue());
+	        									if (pNode.getAttributes().getNamedItem("Semantic").getNodeValue().equals("Input")) {
+	        										flowFragment.pinsInput.add(pNode.getAttributes().getNamedItem("Id").getNodeValue());
+	        									}
+	        									if (pNode.getAttributes().getNamedItem("Semantic").getNodeValue().equals("Output")) {
+	        										flowFragment.pinsOutput.add(pNode.getAttributes().getNamedItem("Id").getNodeValue());
+	        									}
+		        								
 		        							}
 		        						}
 										break;
@@ -244,8 +256,11 @@ public class XMLParser {
 	    	//	System.out.println("Ref: " +dialogueList.get(i).references.get(j));
 	    	//}
 	    	System.out.println("Pins:");
-	    	for (int j = 0; j < dialogueList.get(i).pins.size(); j++) {
-	    		System.out.println("Pin: " +dialogueList.get(i).pins.get(j));
+	    	for (int j = 0; j < dialogueList.get(i).pinsInput.size(); j++) {
+	    		System.out.println("INPUT Pin: " +dialogueList.get(i).pinsInput.get(j));
+	    	}
+	    	for (int j = 0; j < dialogueList.get(i).pinsOutput.size(); j++) {
+	    		System.out.println("OUTPUT Pin: " +dialogueList.get(i).pinsOutput.get(j));
 	    	}
 	    }
 	    
@@ -263,8 +278,11 @@ public class XMLParser {
 	    for (int i = 0; i < flowFragmentList.size(); i++) {
 	    	System.out.println(flowFragmentList.get(i).displayName +", " +flowFragmentList.get(i).id);
 	    	System.out.println("Text: " +flowFragmentList.get(i).text);
-	    	for (int j = 0; j < flowFragmentList.get(i).pins.size(); j++) {
-	    		System.out.println("PIN: "+flowFragmentList.get(i).pins.get(j));
+	    	for (int j = 0; j < flowFragmentList.get(i).pinsInput.size(); j++) {
+	    		System.out.println("INPUT PIN: "+flowFragmentList.get(i).pinsInput.get(j));
+	    	}
+	    	for (int j = 0; j < flowFragmentList.get(i).pinsOutput.size(); j++) {
+	    		System.out.println("OUTPUT PIN: "+flowFragmentList.get(i).pinsOutput.get(j));
 	    	}
 	    }
 	    
@@ -312,13 +330,13 @@ public class XMLParser {
 	    endNode = "";
 	    for (int i=0; i < flowFragmentList.size(); i++) {
 	    	if (flowFragmentList.get(i).displayName.equals("START")) {
-	    		startNode=flowFragmentList.get(i).id;
+	    		
 	    	}
 	    	if (flowFragmentList.get(i).displayName.equals("KONIEC")) {
 	    		endNode=flowFragmentList.get(i).id;
 	    	}
 	    }
-	    
+	    startNode="0x010000000000028C";
 	    lastNode = startNode;
 	    output = "";
 	    List<String> options = new ArrayList<String>();
@@ -328,29 +346,24 @@ public class XMLParser {
 	    do {
 
 	    	for (int i = 0; i < listOfAllObjects.size(); i++) {
-	    		
-	    		if (listOfAllObjects.get(i).id.equals(lastNode)) {
-	    			
-	    			System.out.println(listOfAllObjects.get(i).displayName+" : "+listOfAllObjects.get(i).id);
-	    			
-	    			for (int j = 0; j < connectionList.size(); j++) {
-	    				
-    					if (connectionList.get(j).sourceIdRef.equals(listOfAllObjects.get(i).id)) {
-    						
-    						//for (int k = 0; k < listr)
-    						lastNode = connectionList.get(j).targetIdRef;
-	    					
-	    					System.out.println("S: "+connectionList.get(j).sourceIdRef +" T: "+connectionList.get(j).targetIdRef);
-	    				}
+	    		for (int j = 0; j < listOfAllObjects.get(i).pinsInput.size(); j++) {
+	    			if (listOfAllObjects.get(i).pinsInput.get(j).equals(lastNode)) {
+	    				System.out.println("PinIn: " +lastNode);
+	    				System.out.println("Flow: " +listOfAllObjects.get(i).displayName +" "+listOfAllObjects.get(i).id);
+	    				lastNode = listOfAllObjects.get(i).pinsOutput.get(j);
+	    				System.out.println("PinOut: "+lastNode);
 	    			}
 	    		}
-	    		
-	    		
-	    		if (lastNode.equals(endNode)) 
-	    			theEnd = true;
+	    	}
+	    	
+	    	for (int j = 0; j < connectionList.size(); j++) {
+	    		if (lastNode.equals(connectionList.get(j).sourcePinRef)) {
+	    			lastNode = connectionList.get(j).targetPinRef;
+	    			System.out.println("C: "+connectionList.get(j).id);
+	    		}
 	    	}
 	    	try {
-	    		Thread.sleep(300);
+	    		Thread.sleep(500);
 	    	}
 	    	catch (Exception e) {
 	    		e.printStackTrace();
