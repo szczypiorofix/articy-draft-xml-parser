@@ -344,7 +344,6 @@ public class XMLParser {
 	    boolean goodChoice = true;
 	    
 	    do {
-
 	    	for (int i = 0; i < listOfAllObjects.size(); i++) {
 	    		for (int j = 0; j < listOfAllObjects.get(i).pinsInput.size(); j++) {
 	    			if (listOfAllObjects.get(i).pinsInput.get(j).equals(lastNode)) {
